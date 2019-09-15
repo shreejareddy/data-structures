@@ -1,0 +1,49 @@
+/*C program for the implementation of stack using linked list*/
+#include <stdio.h>
+struct Node{
+    struct Node* ptr;
+    int data;
+};
+
+struct Node* top,* cur,*temp;
+void push(int data)
+{
+    cur=(struct Node*)malloc (sizeof(struct Node));
+    cur->data=data;
+    cur->ptr=top;
+    top=cur;
+}
+void pop()
+{
+    cur=top;
+    top=top->ptr;
+    cur->ptr=NULL;
+    free(cur);
+}
+void display()
+{
+    temp=top;
+    while(temp!=NULL)
+    {
+        printf("%d->",temp->data);
+        temp=temp->ptr;
+    }
+}
+int peek()
+{
+    temp=top;
+    printf("%d",temp->data);
+}
+    
+int main()
+{
+    push(11);
+    push(22);
+    push(23);
+    peek();
+    pop();
+    display();
+
+}
+OUTPUT:
+23 22->11->
