@@ -1,0 +1,32 @@
+/*Cprogram to implement stack using arrays*/
+#include<stdio.h>
+int a[20],top=1,data;
+void push(int data)
+{
+    a[top]=data;
+    top++;
+}
+void pop()
+{
+    /*printf("%d",a[top]);*/
+   top--;
+}
+void display()
+{
+    for(int i=1;i<top;i++)
+    {
+        printf("%d",a[i]);
+    }
+}
+
+int main()
+{
+
+   push(21);
+   push(10);
+   push(15);
+   pop();
+   display();
+}
+OUTPUT:
+21 10
