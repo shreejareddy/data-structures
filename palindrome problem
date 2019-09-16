@@ -1,0 +1,44 @@
+/*Given an array of characters formed with A's and B's.
+This string has special character x which represent the middle element in the string.
+Check whether the string is palindrome or not*/
+#include <stdio.h>
+
+int main()
+{
+    int i,n,a,d,count=0;
+    char s[20],b[20],c[20];
+    gets(s);
+    n=strlen(s);
+    a=((n-1)/2);
+    for(i=0;i<a;i++)
+    {
+        b[i]=s[i];
+    }
+
+   for(i=n-1,d=0;i>a;i--,d++)
+    {
+        c[d]=s[i];
+    }
+    for(i=0;i<a;i++)
+    {
+        if(b[i]==c[i])
+        {
+            count=count+1;
+        }
+    }
+    if(count==a)
+    {
+        printf("ITS IS A PALINDROME");
+    }
+    else
+    {
+        printf("ITS NOT A PALINDROME");
+    }
+
+    return 0;
+}
+INPUT: abbxbba
+OUTPUT:ITS IS A PALINDROME
+INPUT:abbxbbb
+OUTPUT:ITS NOT A PALINDROME
+  
