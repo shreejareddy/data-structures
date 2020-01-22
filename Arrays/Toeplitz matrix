@@ -1,0 +1,39 @@
+//Toeplitx Matrix: It is a square matrix such that T[i,j]=T[i-1,j-1] iff i>1 j>1 for all i,j
+//example:[10  20  30  40]
+//        |50  10  20  30|
+//        |60  50  10  20|
+//        [70  60  50  10]
+//when mapped to single dimension array its complexity is decreased from O(n^2) to O(n) and has 2n-1 elements in it
+//the 1DArray is :0     1     2     3     4     5     6   
+//                a[11] a[12] a[13] a[14] a[21] a[31] a[41]
+//                a[22] a[23] a[24]       a[32] a[43]
+//                a[33] a[34]             a[43]
+//                a[44]
+//                10    20    30    40    50    60    70
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    //
+	    int r1=2*n-1;
+	    System.out.println(r1+"optimum number of elements stored");
+	    //storage and retrieval when mapped to one-dimensional Array 
+	    int[] arr=new int[r1];
+	    //storage
+	    int i=sc.nextInt();
+	    int j=sc.nextInt();
+	    int r;
+	    //retrieval using row major order
+	    if(i<=j)
+	        r=j-i;
+	    else
+	        r=n+i-j-1;
+	    System.out.println(r+" is the position of element after mapping");
+	    sc.close();
+	}
+}
+OUTPUT:
+4 2 1
+4 is the position of element after mapping
