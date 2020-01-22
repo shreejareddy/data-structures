@@ -1,0 +1,19 @@
+//to find the address of the given element of the array which has 75 elements i.e a[1....75]
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int[] a=new int[75];
+	    //assume each string takes three memory words
+	    //starting location of array is 1120 in RAM 
+	    Scanner sc=new Scanner(System.in);
+	    int i=sc.nextInt();
+	    int loc=1120;
+	    //in one dimensional array i will be varying where i is index of array
+	    int r=1120+((i-1)*3);
+	    System.out.println(r);
+	    
+		 
+		
+	}
+}
