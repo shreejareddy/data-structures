@@ -1,0 +1,19 @@
+//division using recursion
+import java.util.Scanner;
+public class Main
+{
+    static int div(int i,int j)
+    {
+        if(i<j)
+            return 0;
+        else
+            return 1+div(i-j,j);
+    }
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int x=sc.nextInt();
+	    int y=sc.nextInt();
+        System.out.println(div(x,y));
+    }
+}
