@@ -1,0 +1,19 @@
+//multiplication using recursion
+import java.util.Scanner;
+public class Main
+{
+    static int mul(int i,int j)
+    {
+        if(j==1)
+            return i;
+        else
+            return i+mul(i,j-1);
+    }
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    int x=sc.nextInt();
+	    int y=sc.nextInt();
+        System.out.println(mul(x,y));
+    }
+}
