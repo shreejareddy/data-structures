@@ -1,0 +1,63 @@
+import java.util.*;
+public class Main
+{
+    Node head,last;
+    static class Node
+    {
+        int data;
+        Node next;
+        Node(int d)
+        {
+            data=d;
+        }
+    }
+    static Main insert(Main list,int data)
+    {
+        Node new_node=new Node(data);
+        new_node.next=null;
+        if(list.head==null)
+        {
+            list.head=new_node;
+            list.last=new_node;
+        }
+        else
+        {
+            list.last.next=new_node;
+            list.last=new_node;
+        }
+        return list;
+    }
+    static Main reverse(Main list)
+    {
+        Node p=list.head,q=null,r;
+        while(p!=null)
+        {
+            r=q;
+            q=p;
+            p=p.next;
+            q.next=r;
+        }
+        list.head=q;
+        return list;
+    }
+	public static void main(String[] args) {
+		Main list=new Main();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number of elements");
+		int n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+		    System.out.println("enter the elements :");
+		    int x=sc.nextInt();
+		    list=insert(list,x);
+		}
+		list=reverse(list);
+		Node temp;
+		temp=list.head;
+		while(temp!=null)
+		{
+		    System.out.println(temp.data);
+		    temp=temp.next;
+		}
+	}
+}
